@@ -45,7 +45,7 @@ wss.on('connection', (ws, req) => {
         // Notify all clients about the updated watcher count
         wss.clients.forEach((client) => {
             if (client.readyState === WebSocket.OPEN) {
-                client.send(JSON.stringify({ productId, count: currentCount }))
+                client.send(JSON.stringify({ productId, count: updatedCount }))
             }
         })
     })
