@@ -16,7 +16,7 @@ const httpServer = createServer(server)
 const wss = new WebSocket.Server({ server: httpServer })
 const watchers = new Map()
 
-wss.on('connection', (ws, res) => { 
+wss.on('connection', (ws, req) => { 
     const productId = req.url && req.url.split('/').pop()
     if (!productId) return 
 
